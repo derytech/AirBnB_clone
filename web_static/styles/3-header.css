@@ -3,16 +3,12 @@ header {
     height: 70px;
     width: 100%;
     border-bottom: 1px solid #CCCCCC;
-    display: flex;
-    align-items: center;
 }
 
-header::before {
-    content: "";
+.logo {
     background-image: url("../images/logo.png");
     background-repeat: no-repeat;
-    background-size: contain;
-    width: 142px;
-    height: 60px;
-    margin-left: 20px;
+    background-position: 20px center;
+    height: 70px;
+    width: 140px;
 }
