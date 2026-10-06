@@ -45,9 +45,9 @@ class HBNBCommand(cmd.Cmd):
     def precmd(self, line):
         """Remove unnecessary spaces before processing a command."""
         return line.strip()
+
     def do_create(self, arg):
-        
-        """Create a new instance of a class."""
+        """Create a new instance of a class with parameters."""
         args = shlex.split(arg)
 
         if not args:
@@ -61,8 +61,29 @@ class HBNBCommand(cmd.Cmd):
             return
 
         obj = self.classes[class_name]()
+
+        for parameter in args[1:]:
+            if "=" not in parameter:
+                continue
+
+            key, value = parameter.split("=", 1)
+
+            if value.startswith('"') and value.endswith('"'):
+                value = value[1:-1]
+
+            try:
+                if "." in value:
+                    value = float(value)
+                else:
+                    value = int(value)
+            except ValueError:
+                pass
+
+            setattr(obj, key, value)
+
         obj.save()
         print(obj.id)
+
     def do_show(self, arg):
         """Print the string representation of an instance."""
         args = shlex.split(arg)
