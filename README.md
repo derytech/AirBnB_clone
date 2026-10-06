@@ -212,9 +212,18 @@ AirBnB_clone/
 
 ## Authors
 
-This project was developed as part of the ALX Software Engineering curriculum.
+This project was developed as part of the FIT Software Engineering curriculum.
 
 See the `AUTHORS` file for the contributors to this repository.
+
+## Contributor
+
+**Name:** Samuel Aanyem Dery
+**GitHub:** [derytech](https://github.com/derytech)
+**Role:** Software Engineering Student
+
+This repository is my version of the AirBnB Clone project, maintained as part of my Software Engineering studies. The project builds on the existing AirBnB Clone codebase while following the requirements of the AirBnB_clone_v2 project.
+
 
 ## License
 
