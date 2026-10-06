@@ -46,6 +46,7 @@ class HBNBCommand(cmd.Cmd):
         """Remove unnecessary spaces before processing a command."""
         return line.strip()
     def do_create(self, arg):
+        
         """Create a new instance of a class."""
         args = shlex.split(arg)
 
