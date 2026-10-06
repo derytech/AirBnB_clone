@@ -105,6 +105,17 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertEqual(self.storage.all(), {})
 
+    def test_new_uses_class_name_and_id_as_key(self):
+        """Test that new uses class name and ID as the storage key."""
+        model = BaseModel()
+
+        self.storage.new(model)
+
+        expected_key = "BaseModel.{}".format(model.id)
+
+        self.assertIn(expected_key, self.storage.all())
+        self.assertIs(self.storage.all()[expected_key], model)
+
 
 if __name__ == "__main__":
     unittest.main()
